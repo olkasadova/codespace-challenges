@@ -23,7 +23,7 @@ console.log(reverseArray([5,4,3,2,1]));
 
 
 let mostExpensiveItem=items=>{
-    let cost=[];
+   
     max=Math.round(items[0].price*items[0].stock,1);
     max_index=0;
     //calculate total cost for each item and log this value in a new array
