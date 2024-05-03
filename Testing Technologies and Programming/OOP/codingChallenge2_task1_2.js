@@ -29,14 +29,13 @@ console.log (user1.firstName, user1.lastName);
 user1.hello();
 
 const user2 = new User ("Jack", "London");
-console.log(user2.getFirstName);
-console.log(user2.getLastName);
+console.log(user2.getFirstName, user2.getLastName);
 
 user2.setFirstName ="Mark";
 user2.setLastName ="Twain";
 
-console.log(user2.getFirstName);
-console.log(user2.getLastName);
+console.log(user2.getFirstName, user2.getLastName);
+user2.hello();
 
 
 
