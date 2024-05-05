@@ -24,7 +24,7 @@ class User {
     }
 }
 
-const user1 = new User ("Doe", "Johns");
+const user1 = new User ("Doe", "John");
 console.log (user1.firstName, user1.lastName);
 user1.hello();
 
