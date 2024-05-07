@@ -1,6 +1,6 @@
 class User {
-    constructor (username){
-        this.username = username;
+    constructor (){
+        this._username = "";
     }
     stateYourRole() {
         // Throw an error if the abstract method is called directly from a child class
@@ -8,10 +8,14 @@ class User {
       }
 
       set setUserName (username){
-        this.username=username;
+        this._username=username;
       }
       get getUserName(){
-        return this.username;
+        return this._username;
+      }
+      //abstract method
+      stateYourRole(){
+        throw newError (" Method must be implemented in the subclass");
       }
 }
 class Admin extends User{
@@ -35,7 +39,9 @@ class Viewer extends User{
 let admin1 = new Admin ();
 admin1.setUserName = "Baltazar";
 console.log(admin1.getUserName);
+admin1.stateYourRole(); 
 
 let viewer1 = new Viewer ();
 viewer1.setUserName = "Melchior";
 console.log (viewer1.getUserName);
+viewer1.stateYourRole();

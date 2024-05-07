@@ -1,12 +1,12 @@
 class User{
     constructor (){
-        this.numberofArticles=0;
+        this._numberofArticles=0;
     }
     set setNumberOfArticles (numberofArticles){
-        this.numberofArticles = numberofArticles;
+        this._numberofArticles = numberofArticles;
     }
     get getNumberOfArticles(){
-        return this.numberofArticles;
+        return this._numberofArticles;
     }
     calcScores(){
         console.log("calculated scores");
@@ -14,32 +14,30 @@ class User{
 }
 
 class Author extends User{
-    constructor (numberofArticles){
+    constructor (){
         super();
-        this.numberofArticles = numberofArticles;
     }
     calcScores(){
-        return this.numberofArticles * 10 + 20;
+        return this.getNumberOfArticles * 10 + 20;
     }
 }
 
 class Editor extends User{
-    constructor (numberofArticles){
+    constructor (){
         super();
-        this.numberofArticles = numberofArticles;
     }
     calcScores (){
-        return this.numberofArticles * 6 + 15;
+        return this.getNumberOfArticles * 6 + 15;
     }
 }
 
-let author1 = new Author (7);
+const author1 = new Author ();
 
 author1.setNumberOfArticles=8;
 console.log (author1.getNumberOfArticles);
 console.log(author1.calcScores());
 
-let editor1 = new Editor (1);
+let editor1 = new Editor ();
 
 editor1.setNumberOfArticles=15;
 console.log (editor1.getNumberOfArticles);
