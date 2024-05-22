@@ -4,21 +4,7 @@ class User {
         this.firstName = firstName;
         this.lastName = lastName;
     }
-    get getFirstName (){
-        return this.firstName;
-    }
-    get getLastName (){
-        return this.lastName;
-    }
-    set setFirstName (firstName){
-        this.firstName = firstName;
-    }
-
-    set setLastName (lastName){
-        this.lastName = lastName;
-    }
-
-
+   
     hello (firstName, lastName){
         console.log (`Hello ${this.firstName}, ${this.lastName}` );
     }
@@ -31,11 +17,7 @@ user1.hello();
 const user2 = new User ("Jack", "London");
 console.log(user2.getFirstName, user2.getLastName);
 
-user2.setFirstName ="Mark";
-user2.setLastName ="Twain";
 
-console.log(user2.getFirstName, user2.getLastName);
-user2.hello();
 
 
 
