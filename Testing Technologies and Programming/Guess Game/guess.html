@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GUESS the NUMBER</title>
+    <style>
+        .options{
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Guess the Number game</h1>
+    
+    <input type = "submit" class = "randomBtn" id="randomBtn" value="Show Random Number"><br>
+
+       <br>
+        <label for="g_number"> Guess the number </label>
+        <input type = "text" class="g_number", id="g_number"> 
+        <label for="guessBtn"> Guess </label>
+        <input type = "submit" class=" guessBtn", id="guessBtn" value="GUESS">
+
+    <h2> Your Number: <span class="guessed_option" id="guessed_option" ></span></h2>
+    <h2> Result: <span class="result" id="result" > </span></h2>
+    <h2> Random Number: <span class="random" id="random" > </span></h2>
+
+<script>
+
+        const Btn = document.getElementById ("btn1");
+        let Txt = document.getElementById ("text1");
+
+        
+
+        // let range be in [-100, 100];
+        const RandomButton = document.getElementById("randomBtn");
+        const GuessBtn = document.getElementById ("guessBtn");
+        let GuessedValue = document.getElementById ("g_number").value;
+        
+        //get the result ouput tags
+        const guessedOption = document.getElementById ("guessed_option");
+        const ResultOutput = document.getElementById ("result");
+        const RandNumber = document.getElementById ("random");
+        
+        GuessBtn.addEventListener("click", function (){ compare ()});
+        
+        const RandomNumber = Math.floor(Math.random()*100);
+        
+        function compare (){
+            const GuessedNumber = document.getElementById ("g_number").value;
+            const text = "";
+        
+            guessedOption.innerHTML = GuessedNumber;
+           
+            if ((GuessedNumber >100)||(GuessedNumber<-100)){
+                ResultOutput.innerHTML = "Please enter a number in range";
+            }
+            else{
+        
+                if ((RandomNumber) == (GuessedNumber)){
+                    ResultOutput.innerHTML = ("You guessed the number!");
+                   
+                }
+                else if ((RandomNumber) > (GuessedNumber)){
+                    ResultOutput.innerHTML = ("Your number is lower, try again ");
+                }
+                else if ((RandomNumber) < (GuessedNumber)){
+                    ResultOutput.innerHTML = ("Your number is higher, try again ");
+                }
+            } 
+           
+           guessedOption.innerHTML = GuessedNumber;
+        }
+        RandomButton.addEventListener ("click", function (){RandNumber.innerHTML = RandomNumber});
+      
+        </script>
+
+</body>
+
+</html>
+
