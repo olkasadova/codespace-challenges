@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,8 +19,8 @@
     <input type = "submit" class = "randomBtn" id="randomBtn" value="Show Random Number"><br>
 
        <br>
-        <label for="g_number"> Guess the number </label>
-        <input type = "text" class="g_number", id="g_number"> 
+        <label for="g_number"> Guess the number between 0 and 100 </label>
+        <input type = "text" class="g_number", id="g_number" maxlength="3"> 
         <label for="guessBtn"> Guess </label>
         <input type = "submit" class=" guessBtn", id="guessBtn" value="GUESS">
 
@@ -29,36 +30,37 @@
 
 <script>
 
-        const Btn = document.getElementById ("btn1");
-        let Txt = document.getElementById ("text1");
-
-        
-
-        // let range be in [-100, 100];
+        // variables to access elements on the page
         const RandomButton = document.getElementById("randomBtn");
         const GuessBtn = document.getElementById ("guessBtn");
         let GuessedValue = document.getElementById ("g_number").value;
         
-        //get the result ouput tags
+        //variable to show the result ouput tags
         const guessedOption = document.getElementById ("guessed_option");
         const ResultOutput = document.getElementById ("result");
         const RandNumber = document.getElementById ("random");
         
-        GuessBtn.addEventListener("click", function (){ compare ()});
-        
+        //random generated number between 0 and 100
         const RandomNumber = Math.floor(Math.random()*100);
-        
+
+        //add listener to run the function to compare user's number and random number on button click
+        GuessBtn.addEventListener("click", function (){ compare ()});
+      
+        //function to compare user's number and random number on button click
         function compare (){
+            //get the value provided by user in the text input
             const GuessedNumber = document.getElementById ("g_number").value;
             const text = "";
-        
+            
+            //show user's provided number
             guessedOption.innerHTML = GuessedNumber;
            
-            if ((GuessedNumber >100)||(GuessedNumber<-100)){
-                ResultOutput.innerHTML = "Please enter a number in range";
+            //validate it is in range 0-100
+            if ((GuessedNumber >100)||(GuessedNumber <0)){
+                ResultOutput.innerHTML = "Please enter a number in range 0-100";
             }
             else{
-        
+                //check is numbers are the same
                 if ((RandomNumber) == (GuessedNumber)){
                     ResultOutput.innerHTML = ("You guessed the number!");
                    
@@ -78,6 +80,5 @@
         </script>
 
 </body>
-
 </html>
 
