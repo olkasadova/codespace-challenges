@@ -28,7 +28,7 @@ let num = userInput.value;
 let attempts = 0;
 
 //function to generate a new random number
-function reset_game(){
+reset_game = ()=>{
    //range of the number will be 0-100
     random_number = Math.floor(Math.random()*100);
     userInput.value = "";
@@ -37,7 +37,7 @@ function reset_game(){
 }
 
 //check that user input is valid - integer on range0-100
-function validate_input (){
+validate_input = ()=>{
     //Number native function converts user input into number value as by default the value we get is a text
     num = Number(userInput.value);
    
@@ -61,7 +61,7 @@ function validate_input (){
     return (true)
 }
 
-function comapre()
+comapre = () =>
 {
     if (validate_input ()==true)
     
@@ -88,13 +88,13 @@ function comapre()
     
    
 }
-function calculate_attempts(){
+calculate_attempts = ()=>{
     //increase number of attempts by 1 and show it to user
     attempts+=1;
     userAttempt.innerHTML = attempts;
 }
 //if user wants to see the number generated he/she can reveal it
-function reveal_number(){
+reveal_number = ()=>{
     console.log (random_number);
     revieledNumber.innerHTML = random_number;
 }
